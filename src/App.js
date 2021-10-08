@@ -41,3 +41,4 @@ export default App
 // npm install react-redux --save
 // npm install redux-thunk --save
 // npm install --save bootstrap
+// npm install react-bootstrap-icons --save
