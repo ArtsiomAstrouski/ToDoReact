@@ -1,8 +1,10 @@
 import React from 'react'
 import { Editor } from './Editor'
-import { useSelector } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux'
+import {} from '../../store/todo-actions'
 
 export function EditorContainer() {
+	const dispatch = useDispatch()
 	const items = useSelector(store => store.todos)
 	const handleTextChange = (item, value) => {
 		console.log(item, value)
