@@ -2,9 +2,9 @@ import React from 'react'
 import { Editor } from './Editor'
 import { useSelector, useDispatch } from 'react-redux'
 import {
-	UPDATE_TODO_TEXT,
-	UPDATE_TODO_DONE,
-	DELETE_TODO,
+	updateTodoDone,
+	updateTodoText,
+	deleteTodo,
 } from '../../store/todo-actions'
 
 export function EditorContainer() {
@@ -12,31 +12,14 @@ export function EditorContainer() {
 	const items = useSelector(store => store.todos)
 
 	const handleTextChange = (item, text) => {
-		dispatch({
-			type: UPDATE_TODO_TEXT,
-			payload: {
-				id: item.id,
-				text,
-			},
-		})
+		dispatch(updateTodoText(item.id, text))
 	}
 
 	const handleToggle = (item, done) => {
-		dispatch({
-			type: UPDATE_TODO_DONE,
-			payload: {
-				id: item.id,
-				done,
-			},
-		})
+		dispatch(updateTodoDone(item.id, done))
 	}
 	const handleRemove = item => {
-		dispatch({
-			type: DELETE_TODO,
-			payload: {
-				id: item.id,
-			},
-		})
+		dispatch(deleteTodo(item.id))
 	}
 
 	return (
