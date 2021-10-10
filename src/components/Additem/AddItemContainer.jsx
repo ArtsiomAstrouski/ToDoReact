@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { AddItem } from './AddItem'
-import { v4 as uuid } from 'react-uuid'
+import { v4 as uuid } from 'uuid'
 import { ADD_TODO } from '../../store/todo-actions'
 
 export function AddItemContainer() {

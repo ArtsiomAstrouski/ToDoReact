@@ -10,6 +10,7 @@ import {
 export function EditorContainer() {
 	const dispatch = useDispatch()
 	const items = useSelector(store => store.todos)
+
 	const handleTextChange = (item, text) => {
 		dispatch({
 			type: UPDATE_TODO_TEXT,
