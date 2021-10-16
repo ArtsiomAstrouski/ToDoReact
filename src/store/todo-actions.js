@@ -1,5 +1,5 @@
 import { v4 as uuid } from 'uuid'
-import { makeActionCreator } from '../utils/makeActionCreator'
+import { makeActionCreator } from '../components/utils/makeActionCreator'
 export const ADD_TODO = 'ADD_TODO'
 export const UPDATE_TODO_TEXT = 'UPDATE_TODO_TEXT'
 export const UPDATE_TODO_DONE = 'UPDATE_TODO_DONE'
@@ -10,20 +10,20 @@ export const addTodo = text => {
 		type: ADD_TODO,
 		payload: {
 			id: uuid(),
-			text,makeActionCreatormakeActionCreator
+			text,
 			done: false,
 		},
 	}
 }
 
 export const updateTodoText = makeActionCreator(UPDATE_TODO_TEXT, [
-  'id',
-  'text',
+	'id',
+	'text',
 ])
 
 export const updateTodoDone = makeActionCreator(UPDATE_TODO_DONE, [
-  'id',
-  'done',
+	'id',
+	'done',
 ])
 
 export const deleteTodo = makeActionCreator(DELETE_TODO, ['id'])
