@@ -5,9 +5,9 @@ import App from './App'
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import { rootReducer } from './store/reducers'
-import { logger } from './middleware/logger'
+import { logger, scheduler } from './middleware'
 
-const store = createStore(rootReducer, applyMiddleware(logger))
+const store = createStore(rootReducer, applyMiddleware(logger, scheduler))
 
 ReactDOM.render(
 	<React.StrictMode>
